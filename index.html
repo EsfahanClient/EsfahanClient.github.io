@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>Esfahan Client</title>
+
+<style>
+
+/* فونت */
+@font-face { font-family: EN; src: url('f1.ttf'); }
+@font-face { font-family: FA; src: url('f2.ttf'); }
+
+body {
+    margin: 0;
+    background: black;
+    color: white;
+}
+
+h1,h2 { font-family: EN; }
+p { font-family: FA; }
+
+/* ===== هدر ===== */
+.header {
+    height: 70px;
+    background: #0b0b0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid #111;
+}
+
+.header h1 {
+    color: yellow;
+    font-size: 20px;
+}
+
+.auth {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.auth button {
+    padding: 6px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.login {
+    background: yellow;
+    color: black;
+}
+
+.signup {
+    background: white;
+    color: black;
+}
+
+/* ===== سکشن وسط ===== */
+.middle {
+    position: relative;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+/* تصاویر */
+.left, .right {
+    width: 50%;
+    filter: grayscale(100%) brightness(35%);
+    transition: 0.5s;
+}
+
+.left {
+    background: url('1.png') center/cover no-repeat;
+}
+
+.right {
+    background: url('2.png') center/cover no-repeat;
+}
+
+.left:hover,
+.right:hover {
+    filter: grayscale(0%) brightness(100%);
+}
+
+/* فید وسط */
+.middle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.8)
+    );
+    pointer-events: none;
+}
+
+/* متن وسط */
+.center {
+    position: absolute;
+    top: 45%; /* 🔥 یکم رفت بالاتر */
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.center h2 {
+    color: yellow;
+    font-size: 42px; /* 🔥 بزرگ‌تر شد */
+}
+
+.center p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.center a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 30px;
+    background: yellow;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #050505;
+    margin-top: 40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- هدر -->
+<div class="header">
+    <h1>Esfahan Client</h1>
+
+    <div class="auth">
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+    </div>
+</div>
+
+<!-- وسط -->
+<div class="middle">
+    <div class="left"></div>
+    <div class="right"></div>
+
+    <div class="center">
+        <h2>Esfahan Client</h2>
+        <p>Download Counter Strike Source V34</p>
+        <a href="#">Download</a>
+    </div>
+</div>
+
+<footer>
+© 2026 Esfahan Client
+</footer>
+
+</body>
+</html>
